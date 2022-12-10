@@ -1,0 +1,10 @@
+numpy
+pandas
+matplotlib
+sklearn
+imblearn
+xgboost
+Flask
+mysql-connector-python
+six
+dill
