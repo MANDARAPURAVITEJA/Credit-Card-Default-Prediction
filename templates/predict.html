@@ -1,0 +1,249 @@
+{% extends 'header.html' %}
+
+{% block head %}
+<title>Default Prediction</title>
+
+{% endblock %}
+
+{% block content %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<style>
+    label{
+        color: rgb(206, 206, 206);
+    }
+</style>
+
+<div class="row" style="padding-left: 70px;padding-right: 50px; background-image:url(https://png.pngtree.com/background/20210710/original/pngtree-full-matte-grain-texture-flare-black-background-picture-image_978975.jpg);
+filter: opacity(95%);">
+    <div class="col-md-6 col-sm-12 col-xs-6 col-lg-6" style="padding-right: 40px;">
+
+        <form action="/predict" method="post">
+            <legend style="color:tomato; padding-top: 15px;">Credit Card Default Prediction Form</legend>
+            <hr style="color:tomato;">
+            <div class="mb-3">
+                <label class="form-label">Limit Balance</label>
+                <input class="form-control" type="number" name="LIMIT_BAL" placeholder="Enter Amount of Credit given" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Gender:</label>
+                    <input type="radio" id="male" name="SEX" value="male">
+                    <label for="male" style="color: rgb(255, 255, 255);">Male</label>
+                    <input type="radio" id="female" name="SEX" value="female">
+                    <label for="female" style="color: rgb(255, 255, 255);">Female</label><br>
+
+                <!--<select class="form-control" name="SEX" placeholder="Select user's Gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>    
+                </select> -->
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Education</label>
+                <select class="form-control" name="EDUCATION" placeholder="Select Educational Qualification" required>
+                    <option value="" disabled selected hidden>Select Educational Qualification</option>
+                    <option value="graduate school">Graduate school</option>
+                    <option value="university">University</option>
+                    <option value="high school">High school</option>
+                    <option value="others">Others</option>    
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Marital Status</label>
+                <select class="form-control" name="MARRIAGE" placeholder="Select Marital Staus" required>
+                    <option value="" disabled selected hidden>Select Marital Status</option>
+                    <option value="married">Married</option>
+                    <option value="single">Single</option>
+                    <option value="others">Others</option>    
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Age</label>
+                <input class="form-control" type="number" name="AGE" placeholder="Enter Age of the person" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Repayment_status(September)</label>
+                <select class="form-control" name="PAY_1" placeholder="No. of months payment delayed" required>
+                    <option value="" disabled selected hidden>Payment delayed(months)</option>
+                    <option value="0">0 pay duly</option>
+                    <option value="1">1 month</option>
+                    <option value="2">2 months</option>    
+                    <option value="3">3 months</option>  
+                    <option value="4">4 months</option>  
+                    <option value="5">5 months</option>  
+                    <option value="6">6 months</option>  
+                    <option value="7">7 months</option>  
+                    <option value="8">8 months</option>                          
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Repayment_status(August)</label>
+                <select class="form-control" name="PAY_2" placeholder="No. of months payment delayed" required>
+                    <option value="" disabled selected hidden>Payment delayed(months)</option>
+                    <option value="0">0 pay duly</option>
+                    <option value="1">1 month</option>
+                    <option value="2">2 months</option>    
+                    <option value="3">3 months</option>  
+                    <option value="4">4 months</option>  
+                    <option value="5">5 months</option>  
+                    <option value="6">6 months</option>  
+                    <option value="7">7 months</option>  
+                    <option value="8">8 months</option>                          
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Repayment_status(July)</label>
+                <select class="form-control" name="PAY_3" placeholder="No. of months payment delayed" required>
+                    <option value="" disabled selected hidden>Payment delayed(months)</option>
+                    <option value="0">0 pay duly</option>
+                    <option value="1">1 month</option>
+                    <option value="2">2 months</option>    
+                    <option value="3">3 months</option>  
+                    <option value="4">4 months</option>  
+                    <option value="5">5 months</option>  
+                    <option value="6">6 months</option>  
+                    <option value="7">7 months</option>  
+                    <option value="8">8 months</option>                          
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Repayment_status(June)</label>
+                <select class="form-control" name="PAY_4" placeholder="No. of months payment delayed" required>
+                    <option value="" disabled selected hidden>Payment delayed(months)</option>
+                    <option value="0">0 pay duly</option>
+                    <option value="1">1 month</option>
+                    <option value="2">2 months</option>    
+                    <option value="3">3 months</option>  
+                    <option value="4">4 months</option>  
+                    <option value="5">5 months</option>  
+                    <option value="6">6 months</option>  
+                    <option value="7">7 months</option>  
+                    <option value="8">8 months</option>                          
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Repayment_status(May)</label>
+                <select class="form-control" name="PAY_5" placeholder="No. of months payment delayed" required>
+                    <option value="" disabled selected hidden>Payment delayed(months)</option>
+                    <option value="0">0 pay duly</option>
+                    <option value="1">1 month</option>
+                    <option value="2">2 months</option>    
+                    <option value="3">3 months</option>  
+                    <option value="4">4 months</option>  
+                    <option value="5">5 months</option>  
+                    <option value="6">6 months</option>  
+                    <option value="7">7 months</option>  
+                    <option value="8">8 months</option>                          
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Repayment_status(April)</label>
+                <select class="form-control" name="PAY_6" placeholder="No. of months payment delayed" required>
+                    <option value="" disabled selected hidden>Payment delayed(months)</option>
+                    <option value="0">0 pay duly</option>
+                    <option value="1">1 month</option>
+                    <option value="2">2 months</option>    
+                    <option value="3">3 months</option>  
+                    <option value="4">4 months</option>  
+                    <option value="5">5 months</option>  
+                    <option value="6">6 months</option>  
+                    <option value="7">7 months</option>  
+                    <option value="8">8 months</option>                          
+                </select>
+            </div>
+
+
+            <div class="mb-3">
+                <label class="form-label">Bill Amount</label>
+                <input class="form-control" type="number" name="BILL_AMT1" placeholder="Enter Bill_Amt for September month" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Payment_Amount(September)</label>
+                <input class="form-control" type="number" name="PAY_AMT1" placeholder="Enter Amount of previous payment in September" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Payment_Amount(August)</label>
+                <input class="form-control" type="number" name="PAY_AMT2" placeholder="Enter Amount of previous payment in August" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Payment_Amount(July)</label>
+                <input class="form-control" type="number" name="PAY_AMT3" placeholder="Enter Amount of previous payment in July" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Payment_Amount(June)</label>
+                <input class="form-control" type="number" name="PAY_AMT4" placeholder="Enter Amount of previous payment in June" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Payment_Amount(May)</label>
+                <input class="form-control" type="number" name="PAY_AMT5" placeholder="Enter Amount of previous payment in May" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Payment_Amount(April)</label>
+                <input class="form-control" type="number" name="PAY_AMT6" placeholder="Enter Amount of previous payment in April" required />
+            </div>
+
+            <div class="mb-3">
+                <input class="btn btn-danger" type="submit" value="Predict Defaulter" required />
+            </div>
+        </form>
+    </div>
+
+    
+    <div class="col-md-6 col-sm-12 col-xs-6 col-lg-6" style="padding-top: 60px;">
+        <div class="card">
+            <div class="card-header">
+                CreditCard Default Prediction
+            </div>
+            
+            <div class="card-body">
+            {% if context['creditcard_data'] is not none %}
+                <table class="table table-striped">
+                <!--<caption>CreditCard Default Prediction </caption>-->
+                    <tr>
+                        <th>Input Feature</th>
+                        <th>Feature Value</th>
+                    </tr>
+                {% for column,value in context['creditcard_data'].items() %}
+                    <tr>
+                        <td>{{column}}</td>
+                        <td>{{value[0]}}</td>
+                    </tr>
+                {% endfor %}
+                    <tr style="font-weight: 600;">
+                        <td>Output(Defaulter or not):  </td>
+                        <td>
+                            {{ context['credicard_default_value'] }}
+                        </td>
+                    </tr>
+                </table>
+
+            {% else %}
+                <h5 class="card-title">Submit Form</h5>
+                <p class="card-text">Kindly provide necessary information to Predict Defaulters</p>
+            {% endif %}
+            <!--Go to <a href="/" class="btn btn-primary">Home</a>-->
+        </div>
+    </div>
+    
+
+</div>
+
+{% endblock %}
+</body>
+</html>

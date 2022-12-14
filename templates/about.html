@@ -1,0 +1,118 @@
+{% extends 'header.html' %}
+
+{% block head %}
+
+
+<title>About</title>
+{% endblock %}
+
+{% block content %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<style>
+    .card-text span{
+        font-weight: 700;
+        color: tomato;
+    }
+
+    .row{
+        padding: 40px;
+    }
+</style>
+
+<div class="row" style="background-image: url('https://png.pngtree.com/background/20210709/original/pngtree-blue-sky-and-white-clouds-banner-background-picture-image_393997.jpg');">
+    <div class="col-md-6 col-sm-12 col-xs-6 col-lg-6"  style="margin-bottom:20px;">
+        <!--<div class="row">
+            <div class="col-md-8">-->
+        <div class="card">
+            <div class="card-header">
+                About Project
+            </div>
+            <div class="card-body">
+        
+                <h5 class="card-title">Credit Card Default Prediction</h5>
+                <p class="card-text">
+                    <span>Project Title:</span> CreditCard Default Prediction. 
+                    <br>This project is about predicting the Defaulter for a Credit Card company based on the past 6 months' user data. 
+                    <br><span>Provided:</span> We have provided user account details with Credit card transaction information from April to September(6 months).Expected: Based on this past data, we need to predict whether a user will be a Future Defaulter or not.
+                    <br><span>Procedure followed: </span>
+                    <br>1. Analyzed the data by performing Exploratory Data Analysis(EDA) and gave structure to the data.
+                    <br>2. After we got some clarity and information about what data is, then performed Feature Engineering followed by Feature selection. 
+                    <br>3. Feature selection was done based on the correlation between features.
+                    <br>4. Since the dataset is highly imbalanced, some sampling techniques are performed to balance the dataset. 
+                    <br>5. Using GridSearchCV found the best hyperparameters for the dataset.
+                    <br>6. Then, created pipelines for both categorical features and numerical features separately. Then combined into a single pipeline using ColumnTransformer.
+                    <br>7. Trained the dataset with various models with the best hyperparameters found.
+                    <br>8. Selected the best model by evaluating the model with performance metrics.
+                    <br>9. So, by using the best model, we can predict whether a user will be Defaulter or not.
+                    <br><span>Outcome:</span> Achieved the expected outcome by following all the above steps and obtained an accuracy of 82.1% for the best model.
+                    <br><span>Conclusion:</span> Now, we can able to predict whether a user will be a Future Defaulter or not, based on his past 6 months' Credit card information.
+                </p>
+                <!--<a class="btn btn-success" target="_blank" href="https://courses.ineuron.ai/Full-Stack-Data-Science-Bootcamp?campaign=affiliate&coupon_code=FZYHXMNX">Check Course</a>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-sm-12 col-xs-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+               About Features
+            </div>
+            <div class="card-body">
+        
+                <h5 class="card-title">Features</h5>
+                <p class="card-text">
+                    <span>LIMIT_BAL:</span> Amount of given credit in NT dollars (includes individual and family/supplementary credit)
+                    <br><span>SEX:</span> Gender (male, female)
+                    <br><span>EDUCATION:</span> (graduate school, university, high school, others)
+                    <br><span>MARRIAGE:</span> Marital status (married, single, others)
+                    <br><span>AGE:</span> Age in years
+                    <br><span>PAY_0:</span> Repayment status in September, 2005 (pay duly, payment delay for one month, payment delay for two months, ... payment delay for eight months and above)
+                    <br><span>PAY_2:</span> Repayment status in August, 2005 (scale same as above)
+                    <br><span>PAY_3:</span> Repayment status in July, 2005 (scale same as above)
+                    <br><span>PAY_4:</span> Repayment status in June, 2005 (scale same as above)
+                    <br><span>PAY_5:</span> Repayment status in May, 2005 (scale same as above)
+                    <br><span>PAY_6:</span> Repayment status in April, 2005 (scale same as above)
+                    <br><span>BILL_AMT1:</span> Amount of bill statement in September, 2005 (NT dollar)
+                    <br><span>PAY_AMT1:</span> Amount of previous payment in September, 2005 (NT dollar)
+                    <br><span>PAY_AMT2:</span> Amount of previous payment in August, 2005 (NT dollar)
+                    <br><span>PAY_AMT3:</span> Amount of previous payment in July, 2005 (NT dollar)
+                    <br><span>PAY_AMT4:</span> Amount of previous payment in June, 2005 (NT dollar)
+                    <br><span>PAY_AMT5:</span> Amount of previous payment in May, 2005 (NT dollar)
+                    <br><span>PAY_AMT6:</span> Amount of previous payment in April, 2005 (NT dollar)
+                </p>
+                <!--<a class="btn btn-primary" href="/logs">Check Logs</a>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-lg-4 col-sm-12" style="margin-bottom:20px;">
+        <div class="card">
+            <div class="card-header">
+               Feedback
+            </div>
+            <div class="card-body">
+        
+                <p class="card-text">Please provide us your valuable feeback for the project through the below link.</p>
+                <a class="btn btn-primary" href="mailto:raviteja.vvss99@gmail.com?" subject="Webpage Comments">Mail to</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-lg-4 col-sm-12" style="margin-bottom:20px;">
+        <div class="card">
+            <div class="card-header">
+               Github repository
+            </div>
+            <div class="card-body">
+        
+                <p class="card-text">Please check the complete code for this project on my below Github repository.</p>
+                <a class="btn btn-dark" href="https://github.com/MANDARAPURAVITEJA/Credit-Card-Default-Prediction" >Github</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

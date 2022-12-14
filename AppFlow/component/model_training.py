@@ -64,7 +64,8 @@ class ModelTrainer:
             logging.info("Applying the column transformer to the Test set data")
             self.X_test1 = column_pipeline.transform(X_test)
 
-            return self.X_train1,self.X_test1,self.y_train1,y_test
+            #returning column pipeline for transforming the realtime data with the Column Transformer.
+            return self.X_train1,self.X_test1,self.y_train1,y_test,column_pipeline
 
         except Exception as e:
             raise CreditcardException(e,sys) from e
@@ -92,21 +93,7 @@ class ModelTrainer:
         except Exception as e:
             raise CreditcardException(e,sys) from e
 
-    def get_trainset_values(self):
-        try:
-            self.X_train, self.X_test, self.y_train, self.y_test = self.creating_pipeline()
 
-            return self.X_train,self.y_train
-        except Exception as e:
-            raise CreditcardException(e,sys) from e
-
-    def get_testset_values(self):
-        try:
-            self.X_train, self.X_test, self.y_train, self.y_test = self.creating_pipeline()
-
-            return self.X_test,self.y_test
-        except Exception as e:
-            raise CreditcardException(e,sys) from e
 
         
 
