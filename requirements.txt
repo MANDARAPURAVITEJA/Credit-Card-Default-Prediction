@@ -1,5 +1,5 @@
-numpy==1.21.0
-pandas==1.1.5
+numpy
+pandas
 matplotlib
 sklearn
 Flask
