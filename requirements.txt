@@ -8,3 +8,4 @@ Flask
 mysql-connector-python
 six
 dill
+-e .
