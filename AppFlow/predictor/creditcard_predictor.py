@@ -94,6 +94,7 @@ class CreditcardDefaultPredictor:
         try:
             model_path = self.model_dir
             model = self.load_object(file_path=model_path)
+            #Transforming categorical values
             X_test['SEX'] = X_test['SEX'].replace({'male':1, 'female':2})
             X_test['EDUCATION']=X_test['EDUCATION'].replace({'graduate school':1,'university':2,'high school':3,'others':4})
             X_test['MARRIAGE']=X_test['MARRIAGE'].replace({'married':2,'single':2,'others':3})
