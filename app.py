@@ -1,5 +1,5 @@
 from flask import Flask, request
-import sys,os
+import os
 from flask import render_template
 from AppFlow.pipeline.pipeline import Pipeline
 from AppFlow.logger import logging
@@ -91,6 +91,6 @@ def about():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
 

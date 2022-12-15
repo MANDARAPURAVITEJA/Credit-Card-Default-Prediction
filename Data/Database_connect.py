@@ -19,10 +19,10 @@ class Database_Creation:
             cursor.execute("show databases")
             list_of_databases = cursor.fetchall()
             print(list_of_databases)
-            # if(('ccdp',) in list_of_databases):
-            #     print("Exists")
-            #     return False
-            cursor.execute("drop database ccdp")
+            if(('ccdp',) in list_of_databases):
+                print("Exists")
+                return False
+            #cursor.execute("drop database ccdp")
             cursor.execute("create database ccdp")
             #cursor.execute("show databases")
             #print(cursor.fetchall())
