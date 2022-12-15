@@ -1,5 +1,5 @@
-numpy==1.19.0
-pandas
+numpy==1.21.6
+pandas==1.1.5
 matplotlib
 sklearn
 imblearn
