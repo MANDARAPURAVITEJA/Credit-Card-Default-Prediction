@@ -91,23 +91,19 @@
 #cursor.execute("select * from creditcardD limit 0,10")
 #print(cursor.fetchall())
 
-# from AppFlow.pipeline.pipeline import Pipeline
-# from AppFlow.component.model_training import ModelTrainer
-# import pandas as pd
-# import pickle
-# pipeline = Pipeline()
-# ct=pipeline.run_pipeline()
+from AppFlow.pipeline.pipeline import Pipeline
+from AppFlow.component.model_training import ModelTrainer
+import pandas as pd
+#import pickle
+pipeline = Pipeline()
+ct=pipeline.run_pipeline()
 
-# mt=ModelTrainer()---
-# ct=mt.column_pipeline()---
+# mt=ModelTrainer()
+# ct=mt.column_pipeline()
 # df=pd.DataFrame({"LIMIT_BAL":[3e+05],"SEX":['male'],"EDUCATION":['university'],"MARRIAGE":['single'],"AGE":[31],"PAY_1":[0],"PAY_2":[0],"PAY_3":[0],"PAY_4":[0],"PAY_5":[0],"PAY_6":[0],"BILL_AMT1":[0],"PAY_AMT1":[12507],"PAY_AMT2":[15056],"PAY_AMT3":[5027],"PAY_AMT4":[5007],"PAY_AMT5":[5063],"PAY_AMT6":[3039]})
 # pickled_model = pickle.load(open('K:\\DATA SCIENCE Reference\\Projects\\Credit-Card-Default-Prediction\\trained_model\\model.pkl', 'rb'))
 # l=pickled_model.predict_proba(ct.transform(df))
-# print(l)
-
-
-import dill
-print(dill.__version__)
+print(ct)
 
 import sklearn
 print(sklearn.__version__)
