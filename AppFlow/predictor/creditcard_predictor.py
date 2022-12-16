@@ -86,6 +86,8 @@ class CreditcardDefaultPredictor:
 
     def __init__(self, model_dir: str):
         try:
+            self.pipeline = Pipeline()
+            self.column_pipeline = self.pipeline.column_transform()
             self.model_dir = model_dir
         except Exception as e:
             raise CreditcardException(e,sys) from e
@@ -95,10 +97,11 @@ class CreditcardDefaultPredictor:
             model_path = self.model_dir
             model = self.load_object(file_path=model_path)
             #Transforming categorical values
-            X_test['SEX'] = X_test['SEX'].replace({'male':1, 'female':2})
-            X_test['EDUCATION']=X_test['EDUCATION'].replace({'graduate school':1,'university':2,'high school':3,'others':4})
-            X_test['MARRIAGE']=X_test['MARRIAGE'].replace({'married':2,'single':2,'others':3})
-            defaulter = model.predict(X_test)
+            # X_test['SEX'] = X_test['SEX'].replace({'male':1, 'female':2})
+            # X_test['EDUCATION']=X_test['EDUCATION'].replace({'graduate school':1,'university':2,'high school':3,'others':4})
+            # X_test['MARRIAGE']=X_test['MARRIAGE'].replace({'married':2,'single':2,'others':3})
+            # defaulter = model.predict(X_test)
+            defaulter = model.predict(self.column_pipeline.transform(X_test))
             if(defaulter==0):
                 return "Not a Defaulter"
             else:
