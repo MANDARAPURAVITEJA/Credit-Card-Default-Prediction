@@ -1,7 +1,7 @@
 numpy
 pandas
 matplotlib
-sklearn
+sklearn==1.0.2
 Flask
 gunicorn
 imblearn
