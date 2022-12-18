@@ -12,7 +12,22 @@
 <style>
     label{
         color: rgb(206, 206, 206);
+        color: orange;
     }
+
+#bio{
+    color: orange;
+}
+#amt{
+    color: orange;
+}
+#Rep{
+    color: rgb(219, 193, 45)
+}
+#pay{
+    color: rgb(193, 244, 117)
+}
+
 </style>
 
 <div class="row" style="padding-left: 70px;padding-right: 50px; background-image:url(https://png.pngtree.com/background/20210710/original/pngtree-full-matte-grain-texture-flare-black-background-picture-image_978975.jpg);
@@ -21,14 +36,14 @@ filter: opacity(95%);">
 
         <form action="/predict" method="post">
             <legend style="color:tomato; padding-top: 15px;">Credit Card Default Prediction Form</legend>
-            <hr style="color:tomato;">
+            <hr style="color:gold;">
             <div class="mb-3">
-                <label class="form-label">Limit Balance</label>
+                <label class="form-label" id="amt">Limit Balance</label>
                 <input class="form-control" type="number" name="LIMIT_BAL" placeholder="Enter Amount of Credit given" required />
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Gender:</label>
+                <label class="form-label" id="bio">Gender:</label>
                     <input type="radio" id="male" name="SEX" value="male">
                     <label for="male" style="color: rgb(255, 255, 255);">Male</label>
                     <input type="radio" id="female" name="SEX" value="female">
@@ -41,7 +56,7 @@ filter: opacity(95%);">
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Education</label>
+                <label class="form-label" id="bio">Education</label>
                 <select class="form-control" name="EDUCATION" placeholder="Select Educational Qualification" required>
                     <option value="" disabled selected hidden>Select Educational Qualification</option>
                     <option value="graduate school">Graduate school</option>
@@ -52,7 +67,7 @@ filter: opacity(95%);">
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Marital Status</label>
+                <label class="form-label" id="bio">Marital Status</label>
                 <select class="form-control" name="MARRIAGE" placeholder="Select Marital Staus" required>
                     <option value="" disabled selected hidden>Select Marital Status</option>
                     <option value="married">Married</option>
@@ -62,12 +77,12 @@ filter: opacity(95%);">
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Age</label>
+                <label class="form-label" id="bio">Age</label>
                 <input class="form-control" type="number" name="AGE" placeholder="Enter Age of the person" required />
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Repayment_status(September)</label>
+                <label class="form-label" id="Rep">Repayment_status(September)</label>
                 <select class="form-control" name="PAY_1" placeholder="No. of months payment delayed" required>
                     <option value="" disabled selected hidden>Payment delayed(months)</option>
                     <option value="0">0 pay duly</option>
@@ -83,7 +98,7 @@ filter: opacity(95%);">
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Repayment_status(August)</label>
+                <label class="form-label" id="Rep">Repayment_status(August)</label>
                 <select class="form-control" name="PAY_2" placeholder="No. of months payment delayed" required>
                     <option value="" disabled selected hidden>Payment delayed(months)</option>
                     <option value="0">0 pay duly</option>
@@ -99,7 +114,7 @@ filter: opacity(95%);">
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Repayment_status(July)</label>
+                <label class="form-label" id="Rep">Repayment_status(July)</label>
                 <select class="form-control" name="PAY_3" placeholder="No. of months payment delayed" required>
                     <option value="" disabled selected hidden>Payment delayed(months)</option>
                     <option value="0">0 pay duly</option>
@@ -115,7 +130,7 @@ filter: opacity(95%);">
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Repayment_status(June)</label>
+                <label class="form-label" id="Rep">Repayment_status(June)</label>
                 <select class="form-control" name="PAY_4" placeholder="No. of months payment delayed" required>
                     <option value="" disabled selected hidden>Payment delayed(months)</option>
                     <option value="0">0 pay duly</option>
@@ -131,7 +146,7 @@ filter: opacity(95%);">
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Repayment_status(May)</label>
+                <label class="form-label" id="Rep">Repayment_status(May)</label>
                 <select class="form-control" name="PAY_5" placeholder="No. of months payment delayed" required>
                     <option value="" disabled selected hidden>Payment delayed(months)</option>
                     <option value="0">0 pay duly</option>
@@ -147,7 +162,7 @@ filter: opacity(95%);">
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Repayment_status(April)</label>
+                <label class="form-label" id="Rep">Repayment_status(April)</label>
                 <select class="form-control" name="PAY_6" placeholder="No. of months payment delayed" required>
                     <option value="" disabled selected hidden>Payment delayed(months)</option>
                     <option value="0">0 pay duly</option>
@@ -164,37 +179,37 @@ filter: opacity(95%);">
 
 
             <div class="mb-3">
-                <label class="form-label">Bill Amount</label>
+                <label class="form-label" id="amt">Bill Amount</label>
                 <input class="form-control" type="number" name="BILL_AMT1" placeholder="Enter Bill_Amt for September month" required />
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Payment_Amount(September)</label>
+                <label class="form-label" id="pay">Payment_Amount(September)</label>
                 <input class="form-control" type="number" name="PAY_AMT1" placeholder="Enter Amount of previous payment in September" required />
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Payment_Amount(August)</label>
+                <label class="form-label" id="pay">Payment_Amount(August)</label>
                 <input class="form-control" type="number" name="PAY_AMT2" placeholder="Enter Amount of previous payment in August" required />
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Payment_Amount(July)</label>
+                <label class="form-label" id="pay">Payment_Amount(July)</label>
                 <input class="form-control" type="number" name="PAY_AMT3" placeholder="Enter Amount of previous payment in July" required />
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Payment_Amount(June)</label>
+                <label class="form-label" id="pay">Payment_Amount(June)</label>
                 <input class="form-control" type="number" name="PAY_AMT4" placeholder="Enter Amount of previous payment in June" required />
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Payment_Amount(May)</label>
+                <label class="form-label" id="pay">Payment_Amount(May)</label>
                 <input class="form-control" type="number" name="PAY_AMT5" placeholder="Enter Amount of previous payment in May" required />
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Payment_Amount(April)</label>
+                <label class="form-label" id="pay">Payment_Amount(April)</label>
                 <input class="form-control" type="number" name="PAY_AMT6" placeholder="Enter Amount of previous payment in April" required />
             </div>
 
