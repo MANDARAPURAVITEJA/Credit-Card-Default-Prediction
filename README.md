@@ -33,7 +33,7 @@ Datasource Link: https://www.kaggle.com/datasets/uciml/default-of-credit-card-cl
 
 ## 📺 Demo Video
 
-Demo Video Link:
+Demo Video Link: https://youtu.be/qn8MmiEdNao
 
 ## 🖥️ Installation
 
@@ -107,6 +107,10 @@ git push origin main
 ## 🦾 Tools & Technogies Used
 
 ![Technologies used](./templates/technologies.png)
+
+## ✍️ Author
+
+@Ravi Teja Mandarapu
 
 
 
